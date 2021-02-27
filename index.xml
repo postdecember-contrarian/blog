@@ -14,7 +14,7 @@
       
       <guid>https://www.amongtheblocks.com/posts/bitcoin-in-practice/</guid>
       <description>‹ Back to Part I
-Technical considerations Bitcoin is called a cryptocurrency because the network on which it runs relies on public key cryptography, a technique that allows people and systems to communicate securely over a public, insecure channel such as the Internet. In the future I will come up with a more thorough explanation of public-key cryptography, and what its possibilities and limitations are, but for now a simplified model of how Bitcoin works is probably enough to understand its basic operations.</description>
+Technical considerations Bitcoin is called a cryptocurrency because the network on which it runs relies on public key cryptography, a technique that allows people and systems to communicate securely over a public, insecure channel such as the Internet. In the future I will come up with a more thorough explanation of public key cryptography, and what its possibilities and limitations are, but for now a simplified model of how Bitcoin works is probably enough to understand its basic operations (Edit: You can read Part I of my intro to public key cryptography here).</description>
     </item>
     
     <item>
