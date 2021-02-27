@@ -6,7 +6,17 @@
     <description>Recent content on Men among the Blocks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Feb 2021 21:30:00 +0200</lastBuildDate><atom:link href="https://www.amongtheblocks.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Feb 2021 16:10:00 +0200</lastBuildDate><atom:link href="https://www.amongtheblocks.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Public Key Cryptography - a very short introduction (Part I)</title>
+      <link>https://www.amongtheblocks.com/posts/public-key-cryptography/</link>
+      <pubDate>Sat, 27 Feb 2021 16:10:00 +0200</pubDate>
+      
+      <guid>https://www.amongtheblocks.com/posts/public-key-cryptography/</guid>
+      <description>Intro to Cryptography Cryptography (a word that can be interpreted from the Greek as &amp;ldquo;hidden writing&amp;rdquo; or &amp;ldquo;secret writing&amp;rdquo;) is the science and art of encoding, transmitting and decoding secret messages over an insecure channel. This is done so that only the sender and the intended receiver can understand what is being communicated, and third parties cannot eavesdrop, even if they manage to somehow intercept the message.
+Why would someone go through any trouble just so they could do that?</description>
+    </item>
+    
     <item>
       <title>Bitcoin in Practice (Part II)</title>
       <link>https://www.amongtheblocks.com/posts/bitcoin-in-practice/</link>

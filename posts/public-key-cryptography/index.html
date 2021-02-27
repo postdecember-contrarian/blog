@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Public Key Cryptography - a very short introduction (Part I) &middot; Men among the Blocks</title>
+  <meta name="description" content="" />
+
+  
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/hyde.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;800&display=swap" rel="stylesheet">
+
+  
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PDL4NNN8FZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PDL4NNN8FZ');
+</script>
+  
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://www.amongtheblocks.com/">
+        <h1>Men among the Blocks</h1>
+      </a>
+      <p class="lead">
+       Post-December Reflections of a Radical Contrarian 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://www.amongtheblocks.com/">Home</a> </li>
+        <li><a href="mailto:postdecember.contrarian@pm.me"> Contact </a></li><li><a href="/posts/"> Posts </a></li>
+      </ul>
+    </nav>
+
+    <p class="copyright-notice">&copy; 2021. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Public Key Cryptography - a very short introduction (Part I)</h1>
+  <time datetime=2021-02-27T16:10:00&#43;0200 class="post-date">Sat, Feb 27, 2021</time>
+  <h1 id="intro-to-cryptography">Intro to Cryptography</h1>
+<p>Cryptography (a word that can be interpreted from the Greek as &ldquo;hidden writing&rdquo; or &ldquo;secret writing&rdquo;) is the science and art of encoding, transmitting and decoding secret <strong>messages</strong> over an insecure <strong>channel</strong>. This is done so that only the sender and the intended receiver can understand what is being communicated, and third parties cannot <strong>eavesdrop</strong>, even if they manage to somehow intercept the message.</p>
+<p>Why would someone go through any trouble just so they could do <em>that</em>? Well, historically, cryptography was mostly used for high-level, sensitive political and military communications, which could result in a major advantages for the opposing side should they manage to intercept and decipher them, though there is evidence private individuals also developed their own techniques, for reasons ranging from protecting themselves agains political or religious persecution to protecting their romantic correspondence while engaged in extraconjugal affairs. There is some evidence some people did it simply for fun or as an aesthetic exercise &ndash; for instance, a theory put forward to explain the famous Voynich Manuscript is that it in fact contains encrypted text [<a href="#references">1</a>].</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Voynich_Manuscript_%2832%29.jpg" alt="Voynich Manuscript"></p>
+<p>In the simplest of terms, encryption is the act of taking any message, such as a physical letter, text file, video, email etc., and scrambling it up in such a way that it can&rsquo;t be read anymore. In order to make it readable again, you need the <strong>key</strong> with which it was encrypted (think of it as a secret password). If you want to communicate securely with someone else, you encrypt all messages with your key and then give that person your key so when they arrive, they can make them readable again. This particular example is known as symmetric-key cryptography and has been known since Ancient times (one of the earliest well-known cyphers is called the Caesar Cypher [<a href="#references">2</a>]).</p>
+<p>There is an issue however with this approach, namely that the key becomes a message in itself. How do you make sure the key arrives at your correspondent safely and unaltered? What happens if someone steals or destroys your key? Or even worse, copies it and then uses it to read your messages without anyone noticing (called a man-in-the-middle attack)? You could try to encrypt the key too, of course &ndash; but then you arrive at the same problem of how to send <em>that</em> key over, and so on and so forth. There really is no good answer to this question and, historically, numerous approaches were tried, with mixed results.</p>
+<h1 id="public-key-cryptography">Public Key Cryptography</h1>
+<p>In order to address this issue, during the late 60&rsquo;s and 70&rsquo;s, a new approach was developed (though some of the underlying principles were known for quite some time &ndash; interestingly enough, the now often-overlooked early weird fiction writer William Hodgson described something very similar in his 1910 novel <em>The Night Land</em>, with relation to telepathic communication, of all things &ndash; perhaps this too warrants some discussion at one point in the future). It involves using not just one key, but a <strong>pair</strong> of two keys. These keys are in fact very large numbers that are mathematically related, but cannot be derived one from the other except by random guessing &ndash; and because of their large size, that would take so much time that any information hidden would be useless by the time it were cracked. One of them has to be shared with all participants, thereby becoming known as the <strong>public key</strong>, while the other has to be kept secret by its owner and is thus known as the <strong>private key</strong>.</p>
+<p>If you wanted to send someone a message using such a system, first you would have to find out the public key of the recipient and use it to encrypt your message. Afterwards you would <strong>sign</strong> the message using your private key. Then you would take both pieces of information and send them over to your counterpart. What they would then do is use their own private key to decrypt the message you sent, and use it together with the signature they received and your public key to <strong>verify</strong> the message:</p>
+<p><img src="/images/public_key_cryptography.png" alt="Public Key Cryptography"></p>
+<p>This signature verification step is essential because it ensures that:</p>
+<ul>
+<li>
+<p>The message truly came from you (Authenticity). Remember, anyone can encrypt a message with the recipient&rsquo;s public key, so what is stopping a third party from encrypting messages and saying they were from you? The signature can only be created with your private key - if they don&rsquo;t have it, they can encrypt messages but can&rsquo;t sign them.</p>
+</li>
+<li>
+<p>The message was not modified on the way to the recipient (Integrity). The signature is unique for each message, so if on the way some clever third party intercepted your data, changed the message, encrypted it back but kept the same signature as before since they couldn&rsquo;t generate a new one, the recipient would know immediately that what they got was not what you sent.</p>
+</li>
+<li>
+<p>You can&rsquo;t say that it wasn&rsquo;t you that sent the message (Non-repudiation). Since only you have access to the private key, it&rsquo;s not possible to claim that a message that has been signed by you wasn&rsquo;t also sent by you.</p>
+</li>
+</ul>
+<p>It is also often the case in real-world implementations that after a secure channel is established and both participants can send, verify and receive messages from each other, they can subsequently agree on a shared secret key that they will use from then on to switch over to a simpler, faster symmetric-key algorithm. This is still secure because the shared key was agreed on using an already-encrypted channel.</p>
+<p>These are the basics of how public key cryptography works, and the real-world there are a few implementations, of which the most famous and most widely-used are RSA (Rivest-Shamir-Adleman, from the name of its inventors) and ECDSA (Elliptic-Curve Digital Signature Algorithm), and while they differ markedly in the mathematics of how they come up with the keys and what relationship there is between them, the general principles described above still apply.</p>
+<h1 id="references">References</h1>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Voynich_manuscript#Ciphers">Voynich Manuscript</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Caesar_cipher">Caesar Cypher</a></li>
+</ol>
+
+</div>
+
+
+    </main>
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-PDL4NNN8FZ', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </body>
+</html>
