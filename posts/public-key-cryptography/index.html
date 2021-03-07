@@ -68,7 +68,8 @@
     <div class="post">
   <h1>Public Key Cryptography - a very short introduction (Part I)</h1>
   <time datetime=2021-02-27T16:10:00&#43;0200 class="post-date">Sat, Feb 27, 2021</time>
-  <h1 id="intro-to-cryptography">Intro to Cryptography</h1>
+  <p><a href="/posts/hashing">To Part II.5 ›</a></p>
+<h1 id="intro-to-cryptography">Intro to Cryptography</h1>
 <p>Cryptography (a word that can be interpreted from the Greek as &ldquo;hidden writing&rdquo; or &ldquo;secret writing&rdquo;) is the science and art of encoding, transmitting and decoding secret <strong>messages</strong> over an insecure <strong>channel</strong>. This is done so that only the sender and the intended receiver can understand what is being communicated, and third parties cannot <strong>eavesdrop</strong>, even if they manage to somehow intercept the message.</p>
 <p>Why would someone go through any trouble just so they could do <em>that</em>? Well, historically, cryptography was mostly used for high-level, sensitive political and military communications, which could result in a major advantages for the opposing side should they manage to intercept and decipher them, though there is evidence private individuals also developed their own techniques, for reasons ranging from protecting themselves agains political or religious persecution to protecting their romantic correspondence while engaged in extraconjugal affairs. There is some evidence some people did it simply for fun or as an aesthetic exercise &ndash; for instance, a theory put forward to explain the famous Voynich Manuscript is that it in fact contains encrypted text [<a href="#references">1</a>].</p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Voynich_Manuscript_%2832%29.jpg" alt="Voynich Manuscript"></p>
@@ -92,6 +93,7 @@
 </ul>
 <p>It is also often the case in real-world implementations that after a secure channel is established and both participants can send, verify and receive messages from each other, they can subsequently agree on a shared secret key that they will use from then on to switch over to a simpler, faster symmetric-key algorithm. This is still secure because the shared key was agreed on using an already-encrypted channel.</p>
 <p>These are the basics of how public key cryptography works, and the real-world there are a few implementations, of which the most famous and most widely-used are RSA (Rivest-Shamir-Adleman, from the name of its inventors) and ECDSA (Elliptic-Curve Digital Signature Algorithm), and while they differ markedly in the mathematics of how they come up with the keys and what relationship there is between them, the general principles described above still apply.</p>
+<p><a href="/posts/hashing">To Part II.5 ›</a></p>
 <h1 id="references">References</h1>
 <ol>
 <li><a href="https://en.wikipedia.org/wiki/Voynich_manuscript#Ciphers">Voynich Manuscript</a></li>

@@ -6,15 +6,25 @@
     <description>Recent content on Men among the Blocks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Feb 2021 16:10:00 +0200</lastBuildDate><atom:link href="https://www.amongtheblocks.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Mar 2021 19:36:01 +0200</lastBuildDate><atom:link href="https://www.amongtheblocks.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hashing (Part II.5)</title>
+      <link>https://www.amongtheblocks.com/posts/hashing/</link>
+      <pubDate>Sun, 07 Mar 2021 19:36:01 +0200</pubDate>
+      
+      <guid>https://www.amongtheblocks.com/posts/hashing/</guid>
+      <description>‹ Back to Public Key Cryptography
+In the previous article we have discussed the basics of public key cryptography and I wanted to continue with an introduction into the way it is used in most cryptocurrencies, using Bitcoin as an example. While doing research on the subject, however, it occurred to me that there is an important concept we have not covered at all, namely hashing. For cryptocurrencies this concept is vital, as hashes are one of the basic elements underlying blockchain technology.</description>
+    </item>
+    
     <item>
       <title>Public Key Cryptography - a very short introduction (Part I)</title>
       <link>https://www.amongtheblocks.com/posts/public-key-cryptography/</link>
       <pubDate>Sat, 27 Feb 2021 16:10:00 +0200</pubDate>
       
       <guid>https://www.amongtheblocks.com/posts/public-key-cryptography/</guid>
-      <description>Intro to Cryptography Cryptography (a word that can be interpreted from the Greek as &amp;ldquo;hidden writing&amp;rdquo; or &amp;ldquo;secret writing&amp;rdquo;) is the science and art of encoding, transmitting and decoding secret messages over an insecure channel. This is done so that only the sender and the intended receiver can understand what is being communicated, and third parties cannot eavesdrop, even if they manage to somehow intercept the message.
-Why would someone go through any trouble just so they could do that?</description>
+      <description>To Part II.5 ›
+Intro to Cryptography Cryptography (a word that can be interpreted from the Greek as &amp;ldquo;hidden writing&amp;rdquo; or &amp;ldquo;secret writing&amp;rdquo;) is the science and art of encoding, transmitting and decoding secret messages over an insecure channel. This is done so that only the sender and the intended receiver can understand what is being communicated, and third parties cannot eavesdrop, even if they manage to somehow intercept the message.</description>
     </item>
     
     <item>
@@ -44,7 +54,8 @@ Crypto in general, and Bitcoin in particular used to be quite the hot topic in t
       
       <guid>https://www.amongtheblocks.com/posts/the-martian-chronicles-ray-bradbury/</guid>
       <description>The night came down around them, and there were stars. But Timothy couldn&amp;rsquo;t find Earth. It had already set.
-&amp;ndash; The Martian Chronicles, p. 240 Ray Bradbury&amp;rsquo;s The Martian Chronicles is a melancholy book, in a way reminiscent of the great tradition of the Western. It is a tale of dusty, empty plains, haunted by deep time and the ghosts of the past, slowly becoming the birthplace of a new world.</description>
+&amp;ndash; The Martian Chronicles, p. 240
+ Ray Bradbury&amp;rsquo;s The Martian Chronicles is a melancholy book, in a way reminiscent of the great tradition of the Western. It is a tale of dusty, empty plains, haunted by deep time and the ghosts of the past, slowly becoming the birthplace of a new world.</description>
     </item>
     
     <item>
