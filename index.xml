@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 07 Mar 2021 19:36:01 +0200</lastBuildDate><atom:link href="https://www.amongtheblocks.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hashing (Part II.5)</title>
+      <title>Hashing (Part I.5)</title>
       <link>https://www.amongtheblocks.com/posts/hashing/</link>
       <pubDate>Sun, 07 Mar 2021 19:36:01 +0200</pubDate>
       
@@ -23,7 +23,7 @@ In the previous article we have discussed the basics of public key cryptography 
       <pubDate>Sat, 27 Feb 2021 16:10:00 +0200</pubDate>
       
       <guid>https://www.amongtheblocks.com/posts/public-key-cryptography/</guid>
-      <description>To Part II.5 ›
+      <description>To Part I.5 ›
 Intro to Cryptography Cryptography (a word that can be interpreted from the Greek as &amp;ldquo;hidden writing&amp;rdquo; or &amp;ldquo;secret writing&amp;rdquo;) is the science and art of encoding, transmitting and decoding secret messages over an insecure channel. This is done so that only the sender and the intended receiver can understand what is being communicated, and third parties cannot eavesdrop, even if they manage to somehow intercept the message.</description>
     </item>
     
