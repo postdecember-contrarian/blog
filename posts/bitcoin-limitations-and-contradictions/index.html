@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bitcoin - Limitations and Contradictions (Part III) &middot; Men among the Blocks</title>
+  <meta name="description" content="" />
+
+  
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/hyde.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;800&display=swap" rel="stylesheet">
+
+  
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PDL4NNN8FZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PDL4NNN8FZ');
+</script>
+  
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://www.amongtheblocks.com/">
+        <h1>Men among the Blocks</h1>
+      </a>
+      <p class="lead">
+       Post-December Reflections of a Radical Contrarian 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://www.amongtheblocks.com/">Home</a> </li>
+        <li><a href="mailto:postdecember.contrarian@pm.me"> Contact </a></li><li><a href="/posts/"> Posts </a></li>
+      </ul>
+    </nav>
+
+    <p class="copyright-notice">&copy; 2021. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Bitcoin - Limitations and Contradictions (Part III)</h1>
+  <time datetime=2021-04-17T20:00:00&#43;0200 class="post-date">Sat, Apr 17, 2021</time>
+  <p><a href="/posts/bitcoin-in-practice">‹ Back to Part II</a></p>
+<p>Does Bitcoin, and more broadly, crypto deliver on its promise to abolish centralised control of money and put it into the hands of the <em>people</em>? Well, in certain respects, it takes a step towards that goal, but as always, the devil&rsquo;s in the details.</p>
+<h2 id="scalability-and-centralisation">Scalability and centralisation</h2>
+<p>One technical issue is that as initially conceived, Bitcoin is not very scalable (remember the distinction between fully-connected nodes and light nodes). Not even second-generation blockchains such as Ethereum have managed to solve this fundamental issue, rather having had to go through several iterations (such as the recent battery of upgrades termed Ethereum 2.0[<a href="#references">1</a>]) in order to keep up with their own success.</p>
+<p>One of the root causes of this centralisation risk and lack of scalability is the large blockchain size. As the Ethereum White Paper suggests, should the blockchain size on disk increase to, for instance, 100TB:</p>
+<blockquote>
+<p>the likely scenario would be that only a very small number of large businesses would run full nodes, with all regular users using light SPV nodes. In such a situation, there arises the potential concern that the full nodes could band together and all agree to cheat in some profitable fashion (eg. change the block reward, give themselves BTC). Light nodes would have no way of detecting this immediately. Of course, at least one honest full node would likely exist, and after a few hours information about the fraud would trickle out through channels like Reddit, but at that point it would be too late: it would be up to the ordinary users to organize an effort to blacklist the given blocks, a massive and likely infeasible coordination problem on a similar scale as that of pulling off a successful 51% attack. In the case of Bitcoin, this is currently a problem&hellip;</p>
+<p>&ndash; <cite>[<a href="#references">2</a>]</cite></p>
+</blockquote>
+<p>Here I feel the peril of such an act is even understated. Indeed, it would be tantamount to (self-)sabotage, as the probable result of this would be that people simply abandon the currency and the network <em>en masse</em>, selling their crypto (and thus driving the exchange rate against fiat asymptotically to zero) as trust in the system collapses:</p>
+<blockquote>
+<p>It’s almost hilariously impractical and non-sensical to do such a thing. You gain little to no economic power, the only real gain is the ability to deny service to others and potentially shut the whole network down.</p>
+<p>&ndash; <cite>[<a href="#references">3</a>]</cite></p>
+</blockquote>
+<p>Yet the power would be theirs to do it, and the system would be at their mercy. How is that different to the <em>too big to fail</em> banks that caused 2007? Was it not also nonsensical and self-sabotaging to give out loans to people they knew could never reimburse them, on a massive scale? It made sense to them at the moment. What if it also makes sense at the moment for corporate node owners to abuse the system? Will all that wealth simply go away, wiped out as if set on fire by the Joker?</p>
+<iframe src="https://giphy.com/embed/kOJyoJiZkscBq" width="480" height="198" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/reaction-kOJyoJiZkscBq">via GIPHY</a></p>
+<p>Mining centralisation is also a huge issue facing Bitcoin (and, I would argue, crypto in general). This is Buterin&rsquo;s assesment:</p>
+<blockquote>
+<p>The Bitcoin mining algorithm works by having miners compute SHA256 on slightly modified versions of the block header millions of times over and over again, until eventually one node comes up with a version whose hash is less than the target (&hellip;) this mining algorithm is vulnerable to two forms of centralization. First, the mining ecosystem has come to be dominated by ASICs (application-specific integrated circuits), computer chips designed for, and therefore thousands of times more efficient at, the specific task of Bitcoin mining. This means that Bitcoin mining is no longer a highly decentralized and egalitarian pursuit, requiring millions of dollars of capital to effectively participate in. Second, most Bitcoin miners do not actually perform block validation locally; instead, they rely on a centralized mining pool to provide the block headers. This problem is arguably worse: as of the time of this writing, the top three mining pools indirectly control roughly 50% of processing power in the Bitcoin network, although this is mitigated by the fact that miners can switch to other mining pools if a pool or coalition attempts a 51% attack.</p>
+<p>&ndash; <cite>[<a href="#references">2</a>]</cite></p>
+</blockquote>
+<p>Yes, second- and third- generation blockchains such as Ethereum itself <em>have</em> taken precautions against specialised hardware. But the Proof-of-Work mechanism is itself a form of <em>censitary suffrage</em>[<a href="#references">6</a>] that pegs one&rsquo;s <em>voting-power</em> to how much computing power one has. The graphics cards used to mine Ethereum constitute <em>in themselves</em> specialised hardware, even if they are in practice not specifically designed for the task they are being used for (an interesting sidenote here is how the effect of graphics cards being bought up for mining purposes, thus wreaking havoc on the gaming market by driving prices up relates to the wider topics I am discussing here, such as Capitalism, systemic thinking, and the neoliberal project).</p>
+<p>So was mining ever, or could it ever be &ldquo;a highly decentralized and egalitarian pursuit&rdquo;, as Buterin asserts? I think you would have to be quite naive to think that, as practical reality has showed us time and time again. Graphics cards and the know-how to set them up are expensive commodities. You have to at least have the ability to absorb <em>that</em> up-front investment to even participate, and because of the centralisation described above, it is increasingly impractical to even break even, except perhaps if you can somehow avoid paying your electricity bills. And all this without even mentioning the extreme, unnecessary environmental impact of mining, which I have not even touched on so far.</p>
+<p>Issues of scalability also arise because by design, in the Bitcoin protocol, every node has to verify every transaction. This causes performance issues, as the network has been capable of sustaining only about 7 transactions per second on average [<a href="#references">4</a>](this is laughable when compared with VISA&rsquo;s peak 65.000[<a href="#references">5</a>], but still incredibly impressive for a fully-connected distributed system). The Lightning network has been adopted as a solution for this issue, and other blockchains have solved it with their own particular optimisations. However, &ldquo;the way the Lightning Network works is it enables users to conduct numerous transactions outside of the main blockchain and then record them as a single one&rdquo;[<a href="#references">5</a>] &ndash; and that basically means that the original protocol, with all its normal safeguards, is being partially sidestepped. I am currently researching the possibilities and issues behind the Lightning Network, and it seems a reasonably secure second layer on top of Bitcoin, but it is not even remotely as &ldquo;secure by design&rdquo; as the original protocol.</p>
+<p>So, as with many great ideas, there have been concessions made to reality &ndash; or more specifically, the status quo. While I think Bitcoin and cryptocurrencies are quite an ingenious technological development, I am growing increasingly sceptical of their emancipatory potential, at least in their current form. While the blockchain itself has incredible reserves of untapped potential, it is quite telling about our current mental horizon that we have applied it to what amounts to a very convoluted, hyper-technologised representation of money. Perhaps the main problem with Bitcoin is not even technical, but rather ideological. We will discuss this aspect next.</p>
+<h2 id="references">References</h2>
+<ol>
+<li><a href="https://ethereum.org/en/eth2/">Ethereum 2.0</a></li>
+<li>Buterin, Vitalik, <a href="https://ethereum.org/en/whitepaper/">The Ethereum Whitepaper</a></li>
+<li>Scrivner, Eric, <a href="https://etscrivner.github.io/cryptocurrency/2015/03/29/notes-on-bitcoin.html">Notes on Bitcoin</a></li>
+<li>[Lightning Network] (<a href="https://cointelegraph.com/lightning-network-101/what-is-lightning-network-and-how-it-works">https://cointelegraph.com/lightning-network-101/what-is-lightning-network-and-how-it-works</a>)</li>
+<li><a href="https://usa.visa.com/dam/VCOM/download/corporate/media/visanet-technology/aboutvisafactsheet.pdf">VISA Infographic</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Suffrage#Census_suffrage">Suffrage</a></li>
+</ol>
+
+</div>
+
+
+    </main>
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-PDL4NNN8FZ', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </body>
+</html>
