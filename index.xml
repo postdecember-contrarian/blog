@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Men among the Blocks</title>
+    <title>Among the Blocks</title>
     <link>https://www.amongtheblocks.com/</link>
-    <description>Recent content on Men among the Blocks</description>
+    <description>Recent content on Among the Blocks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 17 Apr 2021 20:00:00 +0200</lastBuildDate><atom:link href="https://www.amongtheblocks.com/index.xml" rel="self" type="application/rss+xml" />
@@ -103,6 +103,16 @@ Technical considerations Bitcoin is called a cryptocurrency because the network 
       <guid>https://www.amongtheblocks.com/posts/dogma-conspiracies/</guid>
       <description>Perhaps it is tempting to sneer at anti intellectual conspiracy peddling as fundamentally stupid but it does present a genuinely interesting epistemological problem in addition to the practical ones of how to approach someone who literally lives in a different world from you.
 Maybe the attraction to dogmatic thinking is a measure of tiredness with postmodernity, in which micro-&amp;ldquo;grand narratives&amp;rdquo; are constantly shifted, morphed, spliced then discarded (think of stuff like self-help, motivational speakers or &amp;ldquo;financial education&amp;rdquo; on the socially-accepted end, Western Buddhism, New Age and Richard Dawkins-esque cultish Atheism somewhere in the middle, and conspiracy theories and the like on the extreme end).</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://www.amongtheblocks.com/about/</link>
+      <pubDate>Mon, 01 Feb 2021 19:49:42 +0300</pubDate>
+      
+      <guid>https://www.amongtheblocks.com/about/</guid>
+      <description>Welcome to the place among the blocks. Blocks of flats, blocks of text, blocks of code?
+In 1989, most of Eastern Europe has passed through an apocalyptic rebirth that shattered the fragile equilibrium of the post-war 20th century. Some proclaimed the end of history, others the end of ideology. The December Revolution is our founding myth &amp;ndash; Ceaușescu our hated, dethroned czar. It all happened more than 30 years ago, but it still shapes our discourse, imagination and even our urban geography &amp;ndash; thus the blocks from the title, referring to the huge prefab panel apartment buildings that dominate our cityscapes.</description>
     </item>
     
   </channel>
