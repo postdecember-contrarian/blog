@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hashing (Part I.5) &middot; Among the Blocks</title>
+  <meta name="description" content="" />
+
+  
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/hyde.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;800&display=swap" rel="stylesheet">
+
+  
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XFXB32H0MD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XFXB32H0MD');
+</script>
+  
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://www.amongtheblocks.com/">
+        <h1>Among the Blocks</h1>
+      </a>
+      <p class="lead">
+       Post-December Reflections of a Radical Contrarian 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://www.amongtheblocks.com/">Home</a> </li>
+        <li><a href="/about"> About </a></li><li><a href="mailto:post.contrarian@pm.me"> Contact </a></li><li><a href="/posts"> Posts </a></li>
+      </ul>
+    </nav>
+
+    <p class="copyright-notice">&copy; 2021. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Hashing (Part I.5)</h1>
+  <time datetime=2021-03-07T19:36:01&#43;0200 class="post-date">Sun, Mar 7, 2021</time>
+  <p><a href="/posts/public-key-cryptography">‹ Back to Public Key Cryptography</a></p>
+<p>In the previous article we have discussed the basics of public key cryptography and I wanted to continue with an introduction into the way it is used in most cryptocurrencies, using Bitcoin as an example. While doing research on the subject, however, it occurred to me that there is an important concept we have not covered at all, namely hashing. For cryptocurrencies this concept is vital, as hashes are one of the basic elements underlying blockchain technology. This article aims to provide an intro to hashes as a general concept, to cryptographic hashes, as a prerequisite to how they can be used to create digital signatures (while noting that there is a lot more to it than what is covered here).</p>
+<p>Hashing (without qualifiers) is the procedure of mapping a larger-sized input to a smaller-sized output. It is used a lot in programming in general (for instance, the hash map is one of the first data structures you learn about in Algorithms and Data Structures), and for good reason &ndash; it helps you organise things into groups <em>of the same sort</em> so you can later retrieve what you need very fast, since you know beforehand where you put it. Let me provide an example:</p>
+<p>Let&rsquo;s say you want to sort your contacts on your smartphone into groups <em>of the same sort</em> so you can find them easier. The input data of this program would be the set of contacts you have in your phone. The output <strong>keys</strong> or <strong>hashes</strong> are the groups you want to sort them into, for example &ldquo;Family&rdquo;, &ldquo;School&rdquo;, &ldquo;Work&rdquo; etc. These groups will probably have many members in them and most of them will already be known to you, since you likely call them regularly and you don&rsquo;t search for them that often. However, think how useful it is to have a group &ldquo;Emergencies&rdquo; where you can store the number of the road assist company, plumber etc. and find them using this key or label instantly when you need them. Hopefully this is data you don&rsquo;t need very often, but when you do need it, you need it fast. The mapping function that takes your contacts and hashes them into the right keys is the most tedious part of this exercise &ndash; it involves you going through each one of your contacts and deciding what group they belong to. The point is that once this is done, you will not have to go through each of them again to search for the value you need, since by knowing the key you can find the right contacts contained therein.</p>
+<p>The same idea is applied when hashing any data, except it usually involves a mapping function that looks at intrinsic properties of the data itself and maps it to the right key using some collection of rules. In addition, in the procedure discussed above, we have intentionally allowed more data values to be sorted into the same key, but this is usually undesirable in actual usage, being called a <strong>collision</strong>. There are ways to mitigate it (such as chaining, which basically entails allowing it to happen, storing multiple values at the same key, pretty much what we have done above) and re-hashing (using a tie-breaking mechanism to create a new hash that is unique &ndash; there are multiple strategies for this).</p>
+<p>So, based on the above, we can define the following:</p>
+<pre><code>d, k
+</code></pre><p>Where <code>d</code> is the data, <code>k</code> is the key, and</p>
+<pre><code>H(d) -&gt; k
+</code></pre><p>Where <code>H</code> is the mapping or hash function that determines the key <code>k</code> for input <code>d</code></p>
+<p>Cryptographic hash functions are built on this same basic principle, while at the same time exhibiting certain additional properties:</p>
+<ul>
+<li>They take an input of arbitrary length [<a href="#references">1</a>]</li>
+<li>They produce an output of fixed length</li>
+<li>They have a low collision rate (different inputs do not result in the same output)</li>
+<li>They have a high sensitivity to initial conditions (similar inputs result in very different outputs)</li>
+<li>They are one-way (the input cannot be determined from the output)</li>
+</ul>
+<p>The cryptographic hash function used in Bitcoin for signing is called SHA-256. It produces a hash value of 256 bits, which is usually represented as a string of 64 characters in hexadecimal notation. You can play a little bit with the toy hashing app below to get a sense of how it works:</p>
+<p><textarea id="input" style="width: 100%" class="txtarea" placeholder="Add some input text here!"></textarea>
+<button id="hash" class="btn">Generate hash</button></p>
+<pre id="output">Your hash will appear here!</pre>
+<p>The signature is then created based on the hash &ndash; but more on that soon.</p>
+<p><a href="/posts/public-key-cryptography">‹ Back to Public Key Cryptography</a></p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<script type="text/javascript">
+    function generateHash () {
+        const plainText = document.getElementById('input').value;
+        const hashText = CryptoJS.SHA256(plainText);
+        document.getElementById("output").innerHTML = hashText;
+    }
+    const button = document.getElementById('hash');
+    button.addEventListener('click', () => generateHash());
+</script>
+<h1 id="references">References</h1>
+<ol>
+<li>Usually when discussing input length in this context, we refer to the length of a byte array</li>
+</ol>
+
+</div>
+
+
+    </main>
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-XFXB32H0MD', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </body>
+</html>

@@ -124,5 +124,14 @@ Maybe the attraction to dogmatic thinking is a measure of tiredness with postmod
 In 1989, most of Eastern Europe has passed through an apocalyptic rebirth that shattered the fragile equilibrium of the post-war 20th century. Some proclaimed the end of history, others the end of ideology. The December Revolution is our founding myth &amp;ndash; Ceaușescu our hated, dethroned czar. It all happened more than 30 years ago, but it still shapes our discourse, imagination and even our urban geography &amp;ndash; thus the blocks from the title, referring to the huge prefab panel apartment buildings that dominate our cityscapes.</description>
     </item>
     
+    <item>
+      <title>Contact</title>
+      <link>https://www.amongtheblocks.com/contact/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://www.amongtheblocks.com/contact/</guid>
+      <description>Error: Name: Email *: Message *: SubmitThank you for your submission!const setError = (error, s) = {const ms = s * 1000;const messageContainer = document.getElementById(&#39;error_message&#39;);const messageContent = document.getElementById(&#39;error_message_content&#39;);messageContainer.style = &#39;display: block&#39;;messageContent.innerHTML = error;setTimeout(() = {messageContainer.style = &#39;display: none&#39;;messageContent.innerHTML = &#39;&#39;;}, ms);}const isValid = formData = {let valid = true;let error = &#39;&#39;;let inputEmail = formData.</description>
+    </item>
+    
   </channel>
 </rss>

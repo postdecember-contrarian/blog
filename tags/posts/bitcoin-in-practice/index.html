@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bitcoin in Practice (Part II) &middot; Among the Blocks</title>
+  <meta name="description" content="" />
+
+  
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/hyde.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;800&display=swap" rel="stylesheet">
+
+  
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XFXB32H0MD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XFXB32H0MD');
+</script>
+  
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://www.amongtheblocks.com/">
+        <h1>Among the Blocks</h1>
+      </a>
+      <p class="lead">
+       Post-December Reflections of a Radical Contrarian 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://www.amongtheblocks.com/">Home</a> </li>
+        <li><a href="/about"> About </a></li><li><a href="mailto:post.contrarian@pm.me"> Contact </a></li><li><a href="/posts"> Posts </a></li>
+      </ul>
+    </nav>
+
+    <p class="copyright-notice">&copy; 2021. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Bitcoin in Practice (Part II)</h1>
+  <time datetime=2021-02-26T21:30:00&#43;0200 class="post-date">Fri, Feb 26, 2021</time>
+  <p><a href="/posts/bitcoin-as-idea">‹ Back to Part I</a></p>
+<h2 id="technical-considerations">Technical considerations</h2>
+<p>Bitcoin is called a cryptocurrency because the network on which it runs relies on public key cryptography, a technique that allows people and systems to communicate securely over a public, insecure channel such as the Internet. In the future I will come up with a more thorough explanation of public key cryptography, and what its possibilities and limitations are, but for now a simplified model of how Bitcoin works is probably enough to understand its basic operations (<em>Edit:</em> You can <a href="/posts/public-key-cryptography">read Part I of my intro to public key cryptography here</a>).</p>
+<p>Let&rsquo;s start with the network. The Blockchain is a ledger that records all &lsquo;transactions&rsquo; (think of them as records of form &ldquo;Alice gives Bob 30 dollars&rdquo;). There is no central location where this ledger is kept, rather it is distributed among all users on the network (this is not <em>quite</em> true &ndash; as I will explain further below) and its contents are verified independently by numerous &lsquo;nodes&rsquo;, more famously known as <strong>miners</strong>. In order to make adding spurious transactions to the Blockchain difficult, each block contains a reference to the previous block, so that in order to alter one block in the chain, you would have to modify all subsequent blocks as well.</p>
+<p>In addition to this, miners have to solve a mathematical puzzle each time a block of transactions is to be added to the chain (&lsquo;confirmed&rsquo;). When multiple miners come up with different versions of the blockhain, the one with the most work done is considered the most trustworthy (this consensus-reaching mechanism is called &ldquo;Proof-of-Work&rdquo;[<a href="#references">1</a>]). Solving the puzzle is computationally expensive in such a way that essentially it becomes pointless to try and add forged transactions to the ledger, because the price of equipment needed plus the electricity bill would be higher than any possible gains. This puzzle becomes harder and harder to solve as the Blockchain grows, thus keeping up with computing power increases. Legitimate miners still perform the necessary work of confirming blocks because, when successful, they are rewarded with some Bitcoin that is created by the network itself &ndash; this is also how new Bitcoin is introduced into the system (hence &lsquo;mining&rsquo;).</p>
+<p>Each Bitcoin user has two pieces of information that they absolutely need in order to perform any transaction, called a &lsquo;key pair&rsquo;. These are essentially very large, mathematically-related, unique and random numbers that cannot be deduced one from the other. A user needs the &lsquo;public key&rsquo; so they can receive Bitcoins, and the &lsquo;private key&rsquo; in order to initiate and &lsquo;sign&rsquo; transactions, essentially proving that the transaction was not altered after it was created, that it could only have been <em>them</em> that have initiated the transaction, at the same time preventing them from claiming they have not in fact initiated it. They can share the public key with the entire network, but must keep the private key hidden or else risk someone else spending their Bitcoins, as whoever has it is, in essence, able to do all of the above.</p>
+<h2 id="bitcoin-wallets">Bitcoin Wallets</h2>
+<p>In order to &lsquo;own&rsquo; any Bitcoin, you must have a Bitcoin Wallet. This is the case regardless of the method you use to buy Bitcoin, though if you purchase through an exchange, some also offer an integrated wallet. For most people it&rsquo;s probably more convenient to rely on an exchange, but it is better to also have a dedicated wallet, and there is a number of them available for all major platforms. Of these, a large proportion are free and open source software, which is always great to see. Such a wallet is likely to offer quite a bit of other functionality as well, but its primary function is to securely store the key pair discussed above and act as a communication gateway with the wider Bitcoin network.</p>
+<p>Once you install a wallet for the first time, it will generate a new key pair for you. The public key will become the &lsquo;address&rsquo; of your wallet that you will use to receive Bitcoin. In order to protect your private key, the wallet will initially show you a recovery passphrase consisting of a number of plain-text words, usually 12. These should be written down on a piece of paper and stored in a known place &ndash; if you lose these, you won&rsquo;t be able to access your Bitcoins anymore. Every once in a while one reads in the news about some person or other that lost their passphrase &ndash; consigning their often considerable Bitcoin fortunes to oblivion. There is no customer service or password reset, you really <strong>are</strong> the only one responsible for this!</p>
+<p>The basic operation of the wallet is quite simple and very similar to a traditional banking app. It shows you the balance (many wallets allow you to store multiple cryptocurrencies in the same place), exposes your BTC address, and allows you to send it to an address you specify.</p>
+<p>The most convenient platform to use, at least for me, is a smartphone, because all these operations can be done via an integrated QR code reader. For instance, you can receive Bitcoin by scanning a QR code of your public key, and send Bitcoin by scanning a QR code of the destination wallet&rsquo;s public key. It&rsquo;s very easy and convenient, especially if you do transactions in person or via an ATM, or make online payments via Bitcoin. I recommend the <a href="https://brd.com/">BRD Wallet</a>, sometimes also known as the Bread Wallet, which supports all the features enumerated above, and more, such as the ability to exchange Bitcoin in-app for other cryptocurrencies, as well as earn rewards in its proprietary cryptocurrency, the &lsquo;BRD Token&rsquo;, if you are into this kind of gamification.</p>
+<p>The greatest advantage of a standalone wallet however is the fact that, in most cases, you are not asked for any kind of ID. You just install the app and that&rsquo;s it, you&rsquo;ve got your key pair, and can start using it immediately. In fact, most apps do not ask for any kind of information that might link your public key to you. However bear in mind that this is not bulletproof anonymity &ndash; each device on which you install the wallet has its own unique digital fingerprint that <em>could</em> in theory be linked to you, albeit not as easily or directly as your account having attached a picture of your national ID or passport. I am currently looking into ways to mitigate this. For instance I am thinking at the moment about coming up with a live-cd no-persistence VM setup as a means of reliably and portably storing a desktop wallet, though I feel this negates some of the convenience features of smartphone-based wallets. We shall see how it goes.</p>
+<p>The biggest downside of a standalone wallet that I have run into are transaction fees. Though these are calculated by the network based on your wallet balance, number and volume of transactions, etc. and usually the app provider does <strong>not</strong> actually get a cut, these are still significant. For a recently-created wallet having a low balance, they might be very high (I have observed a mean of about 30% of the transacted amount), even prohibitively high for usability. There is, however, a way to lower these.</p>
+<p>Because the original designers did not expect the Bitcoin network to become as popular so quickly, scalability of the network already became an issue around 2016. A secondary payment protocol was built on top of the original network by third-party stakeholders, and in 2017 updates were made to the core network that allow individual nodes to &lsquo;upgrade&rsquo; to the new protocol, christened the &lsquo;Lightning Network&rsquo;, thus enabling faster transaction times and lower transaction fees. Most wallets, including BRD, support this new protocol as well, and you can enable it in settings (it&rsquo;s great that they leave you the option to use the &lsquo;legacy&rsquo; protocol too).</p>
+<p>The other, more subtle issue with the wallet is that it isn&rsquo;t really a full Bitcoin network node &ndash; it does not actually contain a full copy of the Blockchain. You have to consider the fact that at the time of this writing, the Bitcoin blockchain is over 330Gb in size [<a href="#references">2</a>]. There&rsquo;s no way your smartphone is going to download and store an app that huge, so the architecture most wallet apps adopt is a <em>thin client</em> &ndash; an app with UI and some logic that you install on your device &ndash; which in turn connects to an actual full node. The question here is, as you obviously have to trust this third-party &ndash; are you truly in control then?</p>
+<h2 id="ways-to-buy-bitcoin">Ways to buy Bitcoin</h2>
+<p><img src="/images/btc_atm.jpg" alt="BTC ATM"></p>
+<p>There are numerous ways available to buy Bitcoin, but the most common (and safest) are via exchanges and Bitcoin ATMs.</p>
+<p>Exchanges are online broker-like applications that offer a host of functionality, more intuitive UI and usability, have reasonable prices and usually automatically create a wallet associated to your account. But this comes at the cost of privacy, which you have to give up since most ask you for actual legal ID like a national ID card, driver&rsquo;s licence or passport, as well as a valid credit card. Some mainstream examples are <a href="https://www.binance.com/en">Binance</a> and <a href="https://www.coinbase.com/">Coinbase</a>. I am not much of a fan of exchanges and have limited experience with them.</p>
+<p>Bitcoin ATMs are overall the most straightforward way to buy Bitcoin, though they might not be an option for you, depending on your geographical location. In Romania they are quite ubiquitous in shopping malls, although I haven&rsquo;t seen them as much in other places. They are also a decidedly expensive option as they are installed and maintained by who knows who, and offer arbitrary exchange rates in favour of the seller, in addition to charging transaction fees. The procedure to operate one is also not very intuitive because it depends on the model of the ATM (there are at least 3-4 kinds I&rsquo;ve seen), but usually involves selecting the options you want on the screen, scanning your wallet address (you can print out the QR code of your desktop wallet on a piece of paper, or scan the screen of your smartphone, etc.), then inserting cash into the machine.</p>
+<p>Some machines have a minimum amount of money you have to insert (for instance the pictured ATM asks for the equivalent of at least 21 EUR), and after feeding the bills you have to confirm the transaction by scanning the receipt shown on the screen or printed by the machine. Such a transaction can take up to a couple of hours to confirm, so this is not something you can do on short notice. It is also quite unnerving to have inserted a considerable sum into some random machine, and having to wait around until the funds appear in your wallet. Another use case for the Bitcoin ATM is scanning the address of the final recipient of the Bitcoin directly in order to skip losing money twice &ndash; but that can become even more wasteful because of the minimum transaction limitation. Remember also that the amount of Bitcoin the ATM has is limited by the allocation made by the maintainer.</p>
+<p>It seems to me that mainstream online exchanges are geared more towards the amateur-stock-player/sports-betting types, with the same kinds of colorful dashboards, gamified interfaces and social aspects, while Bitcoin ATMs are more suitable for people who just need a certain sum of Bitcoin for one-off transactions. If you are interested in experimenting a little bit with Bitcoin, using small sums (10-50 EUR range), it makes more sense to use an established online exchange, but, especially at the beginning, instead of trying to take advantage of short-term volatility to turn a quick and relatively large profit (though that can be fun too), it would make more sense to do small deposits over some time. Though much less exciting, it is almost certain this will result in an actual profit over longer periods of time.</p>
+<p>This is not something I think would work with ATMs, because they are inherently a more expensive and less flexible option. Where ATMs excel however is anonymity &ndash; they won&rsquo;t ask you for ID or anything else. In conjunction with a similarly-private wallet, they can make transactions much more secure, though because they seem to be large, complex and rather expensive machines, I am pretty sure most will be under surveillance by at least one security camera. With COVID upon us and masks mandatory I doubt such footage is of much use (though, truth be told, with the gait-recognition technology available today, this assumption might too be a bit too optimistic), but it&rsquo;s worth keeping in mind if you are truly interested in maximising your privacy.</p>
+<p>A furhter way to buy Bitcoin, which I urge you not to try, is via fintech banking apps such as Revolut, which seems to be very popular in Romania. While great for overall banking, this app has recently been offering crypto exchange services that are in my opinion more than a little bit dishonest, capitalising on crypto&rsquo;s popularity and recognisability as well as people&rsquo;s general ignorance about it. Revolut does not actually implement a wallet &ndash; what it does is it holds on to Bitcoins on your behalf in its own wallet, all the while establishing an arbitrary exchange rate. In addition to this, I believe you cannot actually <em>spend</em> the money except in order to purchase other currencies, which to me is a rather marginal use case.</p>
+<p>Even more hit and miss is buying from people you meet in person, mostly because they might demand an arbitrary exchange rate or propose all sorts of dubious deals. You also have no idea how they got it (it might have come off a compromised wallet or from illegal activity), and Bitcoin <em>transactions</em> are very easy to track, even if they can&rsquo;t ultimately be linked back to you personally, at least not easily. To my knowledge this is not a feature provided by the network itself, but there are online databases where compromised wallets or wallets involved in criminal activity can be reported, searched, the owner found etc. Do you really want to have a wallet flagged as involved in something shady?</p>
+<h2 id="final-thoughts">Final thoughts</h2>
+<p>It feels as if even at the level of everyday usage there are issues with the high promises of Bitcoin. The promise of a decentralised, peer-to-peer currency is undermined to some extent by technical concessions made to everyday usability and scalability. The promise of no central authority is in part undermined by the same technical restrictions, in part by the geographical and institutional distribution of network nodes (the mining business is, for instance, dominated by a few large companies &ndash; and we haven&rsquo;t even talked yet about China&rsquo;s ASIC farms, or the 51% attack, or the &lsquo;whales&rsquo; dominating the crypto market), and in part by end users' reliance on intermediaries such as exchanges. Its democratic promise is also undermined by the relatively high cost of entry and high risk of loss, and there are very real and compelling practical obstacles to widely using Bitcoin as intended, as a less-trackable substitute for cash.</p>
+<p>Bitcoin&rsquo;s utopian promise was undermined by its own success in the here and now.</p>
+<p>It has become just another commodity among many increasingly exotic commodities, albeit a very popular one that also excites a pseudo-techno-utopian impulse rather than a purely financial-mercantile one (although it seems to me that all such impulses resonate most consonantly with that more primal, gambler&rsquo;s impulse).</p>
+<p>Does it mean Bitcoin is ultimately useless and worthless? Far from it. It is indeed useful for certain people, both as an idea and as a commodity, and for certain use cases, which we will discuss shortly. As to its metaphysical and ideological mystifications, there is much to say too. As a technical tool, unit of exchange, repository of value, or even as a plaything, it can still be made useful, even to you and me. But is it the world-liberating, individual-freeing, market-unleashing libertarian wonder weapon against government intrusion that it has long been chronicled to be? Probably not.</p>
+<p><a href="/posts/bitcoin-limitations-and-contradictions">To Part III ›</a></p>
+<h2 id="references">References</h2>
+<ol>
+<li><a href="https://en.bitcoin.it/wiki/Proof_of_work">Proof of Work</a></li>
+<li><a href="https://ycharts.com/indicators/bitcoin_blockchain_size#:~:text=Basic%20Info,from%20264.83%20one%20year%20ago.">Bitcoin Blockchain size</a></li>
+</ol>
+
+</div>
+
+
+    </main>
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-XFXB32H0MD', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </body>
+</html>

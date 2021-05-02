@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact &middot; Among the Blocks</title>
+  <meta name="description" content="" />
+
+  
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/hyde.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;800&display=swap" rel="stylesheet">
+
+  
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XFXB32H0MD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XFXB32H0MD');
+</script>
+  
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://www.amongtheblocks.com/">
+        <h1>Among the Blocks</h1>
+      </a>
+      <p class="lead">
+       Post-December Reflections of a Radical Contrarian 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://www.amongtheblocks.com/">Home</a> </li>
+        <li><a href="/about"> About </a></li><li><a href="/contact"> Contact </a></li><li><a href="/posts"> Posts </a></li>
+      </ul>
+    </nav>
+
+    <p class="copyright-notice">&copy; 2021. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Contact</h1>
+  <time datetime=2021-02-01T00:00:00&#43;0300 class="post-date">Mon, Feb 1, 2021</time>
+  <form name="contact" id="contact" class="full-width" method="POST" data-netlify="true">
+  <blockquote id="error_message" style="display: none;">
+    <strong>Error: </strong>
+    <span id="error_message_content"></span>
+  </blockquote>
+  <p>
+    <label>Name: </label><br/>
+    <input type="text" class="txtinput full-width" name="name" />
+  </p>
+  <p>
+    <label>Email *: </label><br/>
+    <input type="email" class="txtinput full-width" name="email" required/>
+  </p>
+  <p>
+    <label>Message *: </label><br/>
+    <textarea class="txtarea full-width" name="message" required></textarea>
+  </p>
+  <p>
+    <button type="submit" class="btn" id="submit">Submit</button>
+  </p>
+</form>
+<h3 id="message" style="display: none">Thank you for your submission!</h3>
+<script>
+const setError = (error, s) => {
+    const ms = s * 1000;
+    const messageContainer = document.getElementById('error_message');
+    const messageContent = document.getElementById('error_message_content');
+    messageContainer.style = 'display: block';
+    messageContent.innerHTML = error;
+    setTimeout(() => {
+        messageContainer.style = 'display: none';
+        messageContent.innerHTML = '';
+    }, ms);
+}
+
+const isValid = formData => {
+    let valid = true;
+
+    let error = '';
+    let inputEmail = formData.get('email').trim();
+    let inputMessage = formData.get('message').trim();
+
+    if (inputEmail == '') {
+        error += 'Email is mandatory! ';
+        valid = false;
+    }
+    if (inputMessage == '') {
+        error += 'Message is mandatory! ';
+        valid = false;
+    }
+    if (error) {
+        setError(error, 20);
+    }
+    return valid;
+}
+
+document.getElementById('contact').addEventListener('submit', e => {
+    e.preventDefault();
+    let form = document.getElementById('contact');
+    let message = document.getElementById('message');
+    let formData = new FormData(form);
+
+    if (!isValid(formData)) {
+      return false;
+    }
+
+    fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+    })
+    .then(() => {
+        form.style = 'display: none;';
+        message.style = 'display: block;';
+    })
+    .catch(error => alert(error));
+});
+</script>
+<h2 id="contact-information">Contact information</h2>
+<blockquote>
+<p><strong>NOTE:</strong> Be aware that my old email address, postdecember.contrarian [at] pm.me / postdecember.contrarian [at] protonmail.com, has been hacked. Should you receive mail from this address, please treat it as spam or phishing attempt.</p>
+</blockquote>
+<p><strong>Email</strong>: post.contrarian [at] pm.me</p>
+
+</div>
+
+
+    </main>
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-XFXB32H0MD', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </body>
+</html>

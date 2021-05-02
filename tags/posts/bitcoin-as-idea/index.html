@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bitcoin as Idea (Part I) &middot; Among the Blocks</title>
+  <meta name="description" content="" />
+
+  
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://www.amongtheblocks.com/css/hyde.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;800&display=swap" rel="stylesheet">
+
+  
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XFXB32H0MD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XFXB32H0MD');
+</script>
+  
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://www.amongtheblocks.com/">
+        <h1>Among the Blocks</h1>
+      </a>
+      <p class="lead">
+       Post-December Reflections of a Radical Contrarian 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://www.amongtheblocks.com/">Home</a> </li>
+        <li><a href="/about"> About </a></li><li><a href="mailto:post.contrarian@pm.me"> Contact </a></li><li><a href="/posts"> Posts </a></li>
+      </ul>
+    </nav>
+
+    <p class="copyright-notice">&copy; 2021. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Bitcoin as Idea (Part I)</h1>
+  <time datetime=2021-02-25T00:00:05&#43;0200 class="post-date">Thu, Feb 25, 2021</time>
+  <p>Crypto in general, and Bitcoin in particular used to be quite the hot topic in the tech community back in around 2016-2017, at least from what I could gauge at the time in online circles and in and around the tech hubs of Bucharest. However, I remember at the time having the distinct impression that such enthusiasm was mostly restricted to Bitcoin as a novel financial instrument, a perspective sometimes crossing into treating it as a kind of for-real, totally-legit get-rich-quick (trust the tech, bro!) scheme. Paradoxically, even among developers and other techies, not much attention was given to the technology itself, which at least from an engineering perspective one has to admit is quite the marvel, should one take the time to study its many, many moving parts, though, admittedly, this aspect might be difficult to appreciate immediately for a non-technical reader.</p>
+<blockquote>
+<p><strong>Note</strong>: If you have any interest in how bitcoin works under the hood, I suggest you begin by watching <a href="https://www.youtube.com/watch?v=bBC-nXj3Ng4">this excellent video</a>, then read the original <a href="https://bitcoin.org/bitcoin.pdf">white paper</a>, then, if you are truly interested in the nitty-gritty, move on to <a href="https://github.com/bitcoin/bitcoin">the code</a>, which is pretty interesting in itself. If you are interested in a short <em>philosophical</em> introduction to Bitcoin, I suggest <a href="https://etscrivner.github.io/cryptocurrency/2015/03/29/notes-on-bitcoin.html">this short article</a>.</p>
+</blockquote>
+<p>However, from this fundamental disinterest in understanding the underlying technology, as well as the proliferation (both on- and offline) of petabytes of truly bad information especially in the form of all sorts of crypto-conferences, self-help gurus-turned-&lsquo;crypto advocates&rsquo;, and start-ups using Blockchain and Crypto as little more than buzzwords, there sprang a powerful mythologisation of Bitcoin and its inner workings. This void of understanding began to be filled, with the aid of ill-fitting metaphors and meaningless but grand words endlessly repeated, with the hopes and desires of those who would rather place their faith in technology instead of human or divine action. Which, these days, seems to be most of us.</p>
+<p>And while the crypto-obsession came and went more or less as a fad (though there has been a bit of an uptick in interest recently, otherwise I wouldn&rsquo;t be writing this now), the mythology is what remained, not a popular understanding of the tech, and most certainly not the bitter disappointment.</p>
+<h2 id="the-promises-of-bitcoin">The promise(s) of Bitcoin</h2>
+<blockquote>
+<p>Bitcoin uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of bitcoins is carried out collectively by the network. Bitcoin is open-source; its design is public, nobody owns or controls Bitcoin and everyone can take part. Through many of its unique properties, Bitcoin allows exciting uses that could not be covered by any previous payment system.</p>
+<p>&ndash; <cite>the official bitcoin.org site, retrieved Feb 24 2021</cite></p>
+</blockquote>
+<p>It seems to me a reasonable assumption that Bitcoin began, at least conceptually, as a kind of libertarian wet dream - a unit of exchange with no backing by any bank, state or other commodity, that is worth whatever the market decides it&rsquo;s worth, that can be spent away from the gluttonous gaze of the tax-man. The self-reliance myth made manifest in the very form of the currency that was to enable it.</p>
+<p>Even its genesis in the mind of the mysterious, pseudonymous Satoshi Nakamoto seems to have been destined for mythologisation &ndash; the genius creating the tool to free the world! The entire premise sounds like it could have been lifted from an alternate-universe <em>Atlas Shrugged</em>. Of course, while it&rsquo;s a great news-worthy Internet mystery, it is quite improbable that the reality maps as cleanly to the story as summarised in the established discourse. First of all, it is not at all evident that Satoshi is an individual. It might have been a company, a government agency, some other group of people, different people at different times, or a combination of these (I would have been tempted to add &lsquo;an AI from the future&rsquo; to these, but that wouldn&rsquo;t have been very original now, would it?). Then there remains the fact that the Bitcoin that was launched in 2009 was quite different from Satoshi&rsquo;s initial design, having incorporated the input of numerous people that have become involved early on during the development process. Nowadays, after years of tweaks and upgrades, the network has become, even in its fundamental operation, an altogether different beast.</p>
+<p>But Bitcoin has done something that I find genuinely fascinating: it captured people&rsquo;s imagination as to what <em>could</em> be. It engaged, at least for a while, and at least for a proportion of the public, that <em>utopian impulse</em>, even if it its lasting legacy in the popular consciousness has been a load of quasi-mystical, woefully misinformed discourses on the level of those around essential oils, Breatharianism and other assorted contemporary nonsense. I am not certain if it even was a genuine moment of utopian futurism (though I like to think it was), or rather the kind of tame, fully-recuperated, more-of-the-same <em>but on MARS!</em> discourse that passes for visionary politics nowadays.</p>
+<p>And Bitcoin <em>does</em> address legitimate concerns such as privacy and secure ownership of your money. Purchases made with a credit card are trivially trackable &ndash; remember, the card <em>literally has your name printed on it</em> &ndash; your bank knows exactly what you bought and when. Likewise it can very easily block you from making payments or withdrawals, either of its own accord or at the behest of a government. In the same vein, use of cash is increasingly discouraged both by companies and governments &ndash; a tendency that seems to be accelerating now, during the COVID-19 pandemic &ndash; rendering the prospect of anonymous payments increasingly difficult. Bitcoin allows both these &ndash; to a certain extent, and subject to some constraints.</p>
+<p>Then there is the less-often advertised, but quite crucial aspect to Bitcoin &ndash; the fact that it can be used for illegal transactions. It is often the case that the very characteristics that make use of Bitcoin attractive to privacy-minded individuals also makes it attractive to criminals. While it is impossible to come up with any numbers here, there are indications of a Bitcoin-fueled black economy thriving on the Dark Web on all sorts of nastiness, including drugs, weapons and human trafficking. Such negative aspects of the kinds of networks Bitcoin provides over the Internet have been predicted as early as the late 80s [<a href="#References">1</a>], so it is again ambiguous if this was ever fully a part of the original vision, an accepted side-effect, or something that has been naively overlooked.</p>
+<p>I think Bitcoin promises, all this and more, both explicitly, and by proxy, by being the focus of projection of what people have hoped it could be. The question is &ndash; does Bitcoin deliver at all on its utopian promises?</p>
+<p><a href="/posts/bitcoin-in-practice">To Part II ›</a></p>
+<h2 id="references">References</h2>
+<ol>
+<li>May, C. Timothy (1988) <a href="https://nakamotoinstitute.org/crypto-anarchist-manifesto/">The Crypto Anarchist Manifesto</a></li>
+</ol>
+
+</div>
+
+
+    </main>
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-XFXB32H0MD', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Among the Blocks</title>
+    <link>https://www.amongtheblocks.com/posts/</link>
+    <description>Recent content in Posts on Among the Blocks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Apr 2021 09:41:10 +0300</lastBuildDate><atom:link href="https://www.amongtheblocks.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>On the Government Doing Enough About Climate Change</title>
+      <link>https://www.amongtheblocks.com/posts/govt-doing-enough-about-climate-change/</link>
+      <pubDate>Sun, 25 Apr 2021 09:41:10 +0300</pubDate>
+      
+      <guid>https://www.amongtheblocks.com/posts/govt-doing-enough-about-climate-change/</guid>
+      <description>I am not sure about how this works in other countries, but here, we are getting closer to the term finals period. This is the time when if you are even remotely involved in academia as a student or a professor, you will get loads and loads of questionnaires from students doing research for their term papers or dissertation projects, and sure enough I got a bunch of them myself. I really enjoy seeing that most of the research done both by undergraduate and graduate students is focused on issues actually relevant to our current predicament(s), but then again, identifying the problem is but one step.</description>
+    </item>
+    
+    <item>
+      <title>Bitcoin - Limitations and Contradictions (Part III)</title>
+      <link>https://www.amongtheblocks.com/posts/bitcoin-limitations-and-contradictions/</link>
+      <pubDate>Sat, 17 Apr 2021 20:00:00 +0200</pubDate>
+      
+      <guid>https://www.amongtheblocks.com/posts/bitcoin-limitations-and-contradictions/</guid>
+      <description>‹ Back to Part II
+Does Bitcoin, and more broadly, crypto deliver on its promise to abolish centralised control of money and put it into the hands of the people? Well, in certain respects, it takes a step towards that goal, but as always, the devil&amp;rsquo;s in the details.
+Scalability and centralisation One technical issue is that as initially conceived, Bitcoin is not very scalable (remember the distinction between fully-connected nodes and light nodes).</description>
+    </item>
+    
+    <item>
+      <title>The Expanse</title>
+      <link>https://www.amongtheblocks.com/posts/the-expanse/</link>
+      <pubDate>Mon, 12 Apr 2021 15:40:00 +0300</pubDate>
+      
+      <guid>https://www.amongtheblocks.com/posts/the-expanse/</guid>
+      <description>During the first few months of 2021, a second semi-lockdown was instaurated where I live due to the ongoing COVID-19 pandemic. Bad weather outside, curfews and all, I had some more time inside on my hands to indulge my guilty pleasures, including watch some shows. The Expanse is one of those long-form TV dramas that seem to scratch my itch for SF in just the right way, a show that never ceases to amaze me in that as far as it goes, it is collated almost exclusively from TV sci-fi melodrama cliches a la Stargate SG-1 or Battlestar Galactica (the early-2000s one), but without the occasional high concept SF episode of the former or the mythical-religious pretensions of the latter.</description>
+    </item>
+    
+    <item>
+      <title>Two Films, Two Books: Stalker and Annihilation (Part I)</title>
+      <link>https://www.amongtheblocks.com/posts/two-films-two-books-annihilation-stalker/</link>
+      <pubDate>Sun, 11 Apr 2021 20:30:00 +0200</pubDate>
+      
+      <guid>https://www.amongtheblocks.com/posts/two-films-two-books-annihilation-stalker/</guid>
+      <description>X Marks the Spot Just finished reading the Southern Reach trilogy by Jeff VanderMeer and I have to say, there is a quite a number of things to unpack. Probably controversially, I would say the first book, Annihilation, is by some margin the strongest in the series by virtue of its purity of purpose &amp;ndash; building tension and atmosphere to accompany a slow descent into the mysterious Area X. In many ways, Area X is the main character of the series, and it comes out of a rich tradition of the SF trope of the Zone of Alienation, a deserted area where normal laws of nature no longer apply.</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on Christian fundamentalism and inflexible thinking</title>
+      <link>https://www.amongtheblocks.com/posts/thoughts-on-christian-fundamentalism/</link>
+      <pubDate>Sat, 20 Mar 2021 18:01:15 +0200</pubDate>
+      
+      <guid>https://www.amongtheblocks.com/posts/thoughts-on-christian-fundamentalism/</guid>
+      <description>While I have been an agnostic for as long as I remember, I have always been fascinated by religion. Not just in an anthropological or philosophical sense either &amp;ndash; I was fascincated by its contents, its high ideals, its immense buildings, the wonderful art it has produced, its pretenses to universality &amp;ndash; but also the little things: the reverend&amp;rsquo;s vestments, his subtle change of accent during the sermon, our cacophonous unison chanting during service that, through some miracle only possible in God&amp;rsquo;s house, could still somehow be recognised as a grand hymn.</description>
+    </item>
+    
+    <item>
+      <title>Hashing (Part I.5)</title>
+      <link>https://www.amongtheblocks.com/posts/hashing/</link>
+      <pubDate>Sun, 07 Mar 2021 19:36:01 +0200</pubDate>
+      
+      <guid>https://www.amongtheblocks.com/posts/hashing/</guid>
+      <description>‹ Back to Public Key Cryptography
+In the previous article we have discussed the basics of public key cryptography and I wanted to continue with an introduction into the way it is used in most cryptocurrencies, using Bitcoin as an example. While doing research on the subject, however, it occurred to me that there is an important concept we have not covered at all, namely hashing. For cryptocurrencies this concept is vital, as hashes are one of the basic elements underlying blockchain technology.</description>
+    </item>
+    
+    <item>
+      <title>Public Key Cryptography - a very short introduction (Part I)</title>
+      <link>https://www.amongtheblocks.com/posts/public-key-cryptography/</link>
+      <pubDate>Sat, 27 Feb 2021 16:10:00 +0200</pubDate>
+      
+      <guid>https://www.amongtheblocks.com/posts/public-key-cryptography/</guid>
+      <description>To Part I.5 ›
+Intro to Cryptography Cryptography (a word that can be interpreted from the Greek as &amp;ldquo;hidden writing&amp;rdquo; or &amp;ldquo;secret writing&amp;rdquo;) is the science and art of encoding, transmitting and decoding secret messages over an insecure channel. This is done so that only the sender and the intended receiver can understand what is being communicated, and third parties cannot eavesdrop, even if they manage to somehow intercept the message.</description>
+    </item>
+    
+    <item>
+      <title>Bitcoin in Practice (Part II)</title>
+      <link>https://www.amongtheblocks.com/posts/bitcoin-in-practice/</link>
+      <pubDate>Fri, 26 Feb 2021 21:30:00 +0200</pubDate>
+      
+      <guid>https://www.amongtheblocks.com/posts/bitcoin-in-practice/</guid>
+      <description>‹ Back to Part I
+Technical considerations Bitcoin is called a cryptocurrency because the network on which it runs relies on public key cryptography, a technique that allows people and systems to communicate securely over a public, insecure channel such as the Internet. In the future I will come up with a more thorough explanation of public key cryptography, and what its possibilities and limitations are, but for now a simplified model of how Bitcoin works is probably enough to understand its basic operations (Edit: You can read Part I of my intro to public key cryptography here).</description>
+    </item>
+    
+    <item>
+      <title>Bitcoin as Idea (Part I)</title>
+      <link>https://www.amongtheblocks.com/posts/bitcoin-as-idea/</link>
+      <pubDate>Thu, 25 Feb 2021 00:00:05 +0200</pubDate>
+      
+      <guid>https://www.amongtheblocks.com/posts/bitcoin-as-idea/</guid>
+      <description>Crypto in general, and Bitcoin in particular used to be quite the hot topic in the tech community back in around 2016-2017, at least from what I could gauge at the time in online circles and in and around the tech hubs of Bucharest. However, I remember at the time having the distinct impression that such enthusiasm was mostly restricted to Bitcoin as a novel financial instrument, a perspective sometimes crossing into treating it as a kind of for-real, totally-legit get-rich-quick (trust the tech, bro!</description>
+    </item>
+    
+    <item>
+      <title>The Martian Chronicles - Ray Bradbury</title>
+      <link>https://www.amongtheblocks.com/posts/the-martian-chronicles-ray-bradbury/</link>
+      <pubDate>Wed, 17 Feb 2021 22:30:00 +0200</pubDate>
+      
+      <guid>https://www.amongtheblocks.com/posts/the-martian-chronicles-ray-bradbury/</guid>
+      <description>The night came down around them, and there were stars. But Timothy couldn&amp;rsquo;t find Earth. It had already set.
+&amp;ndash; The Martian Chronicles, p. 240
+ Ray Bradbury&amp;rsquo;s The Martian Chronicles is a melancholy book, in a way reminiscent of the great tradition of the Western. It is a tale of dusty, empty plains, haunted by deep time and the ghosts of the past, slowly becoming the birthplace of a new world.</description>
+    </item>
+    
+    <item>
+      <title>Conspiracy theories and dogmatism</title>
+      <link>https://www.amongtheblocks.com/posts/dogma-conspiracies/</link>
+      <pubDate>Tue, 09 Feb 2021 16:00:00 +0200</pubDate>
+      
+      <guid>https://www.amongtheblocks.com/posts/dogma-conspiracies/</guid>
+      <description>Perhaps it is tempting to sneer at anti intellectual conspiracy peddling as fundamentally stupid but it does present a genuinely interesting epistemological problem in addition to the practical ones of how to approach someone who literally lives in a different world from you.
+Maybe the attraction to dogmatic thinking is a measure of tiredness with postmodernity, in which micro-&amp;ldquo;grand narratives&amp;rdquo; are constantly shifted, morphed, spliced then discarded (think of stuff like self-help, motivational speakers or &amp;ldquo;financial education&amp;rdquo; on the socially-accepted end, Western Buddhism, New Age and Richard Dawkins-esque cultish Atheism somewhere in the middle, and conspiracy theories and the like on the extreme end).</description>
+    </item>
+    
+  </channel>
+</rss>
