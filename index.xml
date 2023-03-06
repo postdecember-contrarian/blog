@@ -6,7 +6,17 @@
     <description>Recent content on Among the Blocks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Sep 2022 08:00:00 +0300</lastBuildDate><atom:link href="https://www.amongtheblocks.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Mar 2023 13:30:00 +0300</lastBuildDate><atom:link href="https://www.amongtheblocks.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Three Body Problem</title>
+      <link>https://www.amongtheblocks.com/posts/three-body-problem/</link>
+      <pubDate>Sun, 05 Mar 2023 13:30:00 +0300</pubDate>
+      
+      <guid>https://www.amongtheblocks.com/posts/three-body-problem/</guid>
+      <description>The Three Body Problem by Liu Cixin is an unusual book. Though ordinarily classified as a &amp;ldquo;hard&amp;rdquo; science fiction novel, it is unusual in that it weaves recent Chinese history, a physics problem, an array of quirky characters with a unique psychology, and adventurous yet grounded scientific speculation around a very concrete political question &amp;ndash; perhaps the oldest one: who should rule, and on what basis?
+The book both fits the hard SF mold, and doesn&amp;rsquo;t.</description>
+    </item>
+    
     <item>
       <title>The Masturbationsstreit Revisited</title>
       <link>https://www.amongtheblocks.com/posts/the-masturbationsstreit-revisited/</link>
@@ -346,6 +356,16 @@ In 1989, most of Eastern Europe has passed through an apocalyptic rebirth that s
       
       <guid>https://www.amongtheblocks.com/contact/</guid>
       <description>Error: Name: Email *: Message *: SubmitThank you for your submission!const setError = (error, s) = {const ms = s * 1000;const messageContainer = document.getElementById(&#39;error_message&#39;);const messageContent = document.getElementById(&#39;error_message_content&#39;);messageContainer.style = &#39;display: block&#39;;messageContent.innerHTML = error;setTimeout(() = {messageContainer.style = &#39;display: none&#39;;messageContent.innerHTML = &#39;&#39;;}, ms);}const isValid = formData = {let valid = true;let error = &#39;&#39;;let inputEmail = formData.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.amongtheblocks.com/posts/chat-gpt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.amongtheblocks.com/posts/chat-gpt/</guid>
+      <description>Write a short aphorism applying Bataille&amp;rsquo;s concept of general economy to manele music &amp;ldquo;Manele music, like Bataille&amp;rsquo;s concept of general economy, demonstrates how transgression and excess can bring both energy and joy to the masses, while subverting traditional societal values.&amp;rdquo;
+erik.kovacs@csie.ase.ro How does this relate to tarot then? In the Tarot, the concept of excess and transgression can be seen in cards such as the Tower and the Devil. These cards often represent upheaval, chaos, and the breaking down of old structures and ways of thinking.</description>
     </item>
     
   </channel>
